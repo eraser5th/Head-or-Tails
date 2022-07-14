@@ -1,6 +1,10 @@
 #include <iostream>
 #include <string>
 
+void sayResult(int hc, int tc) {
+  std::cout << (hc > tc ? "You won!" : "You lost!") << std::endl;
+}
+
 int main() {
   srand(time(NULL));
 
@@ -27,6 +31,8 @@ int main() {
     }
   }
   printf("Heads: %d, Tails: %d\n", headsCount, tailsCount);
+
+  sayResult(headsCount, tailsCount);
 
   return 0;
 }
