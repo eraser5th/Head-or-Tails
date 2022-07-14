@@ -1,12 +1,28 @@
 #include <iostream>
 #include <string>
 
-void sayResult(int hc, int tc) {
-  std::cout << (hc > tc ? "You won!" : "You lost!") << std::endl;
+void sayResult(int hc, int tc, std::string userName) {
+  std::cout
+    << userName
+    << (hc > tc ? " won!" : " lost!")
+    << std::endl;
+}
+
+std::string login() {
+  std::cout << "Who are you\n";
+
+  std::string name;
+  std::cin >> name;
+
+  std::cout << "Hello, " << name << "!\n";
+
+  return name;
 }
 
 int main() {
   srand(time(NULL));
+
+  std::string userName = login();
 
   std::cout << "Tossing a coin...\n";
 
@@ -32,7 +48,7 @@ int main() {
   }
   printf("Heads: %d, Tails: %d\n", headsCount, tailsCount);
 
-  sayResult(headsCount, tailsCount);
+  sayResult(headsCount, tailsCount, userName);
 
   return 0;
 }
