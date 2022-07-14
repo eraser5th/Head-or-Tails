@@ -1,8 +1,21 @@
 #include <iostream>
 #include <string>
 
+std::string login() {
+  std::cout << "Who are you\n";
+
+  std::string name;
+  std::cin >> name;
+
+  std::cout << "Hello, " << name << "!\n";
+
+  return name;
+}
+
 int main() {
   srand(time(NULL));
+
+  login();
 
   std::cout << "Tossing a coin...\n";
 
